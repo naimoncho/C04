@@ -9,18 +9,18 @@ int ft_atoi(char *str)
     res = 0;
     while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
     {
-        i ++;
+        i++;
     }
-    while (str[i] == 43 || str[i] == 45)
+    while (str[i] == '+' || str[i] == '-')
     {
-        if (str[i] == 45)
+        if (str[i] == '-')
             sign = sign * -1;
-            i ++;
+        i++;
     }
-    while (str[i] >= '0' || str[i] <= '9')
+    while (str[i] >= '0' && str[i] <= '9')
     {
         res = (res * 10) + str[i] - 48;
-        i ++;
+        i++;
     }
     return (res * sign);
 }
